@@ -6,16 +6,18 @@ export default class Layout extends React.Component {
         this.props.history.pushState(null, "/");
     }
   render() {
-    return (
-        <div>
-            <h1>KillerNews.net</h1>
-            {this.props.children}
 
-            <Link to="archives" class="btn btn-danger">archives</Link>
-            <Link to="settings" class="btn btn-success">settings</Link>
-            <button onClick={this.navigate.bind(this)}>featured</button>
+      const { history } = this.props;
+        return (
+            <div>
+                <h1>KillerNews.net</h1>
+                {this.props.children}
 
-        </div>
-    );
+                <Link to="archives" activeClassName="test" class="btn btn-danger">archives</Link>
+                <Link to="settings" class="btn btn-success">settings</Link>
+                <button onClick={this.navigate.bind(this)}>featured</button>
+
+            </div>
+        );
   }
 }
